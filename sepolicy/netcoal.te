@@ -7,3 +7,7 @@ init_daemon_domain(netcoal)
 allow netcoal property_socket:sock_file write;
 allow netcoal self:udp_socket { create ioctl };
 allow netcoal self:capability { net_raw net_admin };
+
+# For /proc/irq
+allow netcoal proc_irq:dir r_dir_perms;
+allow netcoal proc_irq:file rw_file_perms;

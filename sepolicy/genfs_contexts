@@ -1,1 +1,2 @@
 genfscon cramfs / u:object_r:readonlyfs:s0
+genfscon proc /irq u:object_r:proc_irq:s0
