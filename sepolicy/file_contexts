@@ -5,6 +5,7 @@
 /dev/sw_sync              u:object_r:sw_sync_device:s0
 /dev/hdmi_hpd             u:object_r:hdmi_hpd_device:s0
 
+/system/bin/hfrvideo u:object_r:hfrvideo_exec:s0
 /system/bin/hwcbinder u:object_r:hwcbinder_exec:s0
 /system/bin/nxserver u:object_r:nxserver_exec:s0
 /sbin/nxmini u:object_r:nxmini_exec:s0
