@@ -256,7 +256,7 @@ ADDITIONAL_BUILD_PROPERTIES += \
     ro.rfkilldisabled=1
 
 PRODUCT_COPY_FILES += \
-   ${BCM_VENDOR_STB_ROOT}/bcm_platform/conx/btusb/firmware/BCM43569A2_001.003.004.0074.0000_Generic_USB_40MHz_fcbga_BU_WakeOn_BLE_Google.hcd:system/vendor/broadcom/btusb/firmware/BCM43569A2_001.003.004.0074.0000_Generic_USB_40MHz_fcbga_BU_WakeOn_BLE_Google.hcd
+   ${BCM_VENDOR_STB_ROOT}/bcm_platform/conx/btusb/firmware/BCM43569A2_001.003.004.0074.0000_Generic_USB_40MHz_fcbga_BU_WakeOn_BLE_Google.hcd:system/vendor/broadcom/btusb/firmware/BCM_bt_fw.hcd
 
 PRODUCT_PACKAGES += \
 	audio.a2dp.default
