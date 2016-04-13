@@ -14,4 +14,4 @@ allow hfrvideo mediaserver:process { getsched setsched };
 r_dir_file(hfrvideo, domain)
 
 dontaudit hfrvideo platform_app:dir search;
-dontaudit hfrvideo platform_app:dir search;
+dontaudit hfrvideo untrusted_app:dir search;
