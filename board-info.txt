@@ -1,3 +1,3 @@
 require board=avko
-require version-bootloader=v1.11-97-g6380b92
+require version-bootloader=v1.10-100-gb882223
 
