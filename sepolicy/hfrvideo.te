@@ -9,6 +9,8 @@ allow hfrvideo self:capability { sys_nice };
 allow hfrvideo surfaceflinger:process { getsched setsched };
 allow hfrvideo nxserver:process { getsched setsched };
 allow hfrvideo mediaserver:process { getsched setsched };
+allow hfrvideo hwcbinder:process { getsched setsched };
+allow hfrvideo untrusted_app:process { getsched setsched };
 
 # Read /proc/pid data for all domains.
 r_dir_file(hfrvideo, domain)
