@@ -164,6 +164,8 @@ build_android_bsu: build_bolt
 	@echo "'$@' completed"
 
 .PHONY: build_bootloaderimg
+_bootloader.img := $(PRODUCT_OUT)/bootloader.img
+$(_bootloader.img): build_bootloaderimg
 build_bootloaderimg: build_android_bsu
 	@echo "'$@' started"
 	$(ANDROID_BSU_DIR)/scripts/bootloaderimg.py $(PRODUCT_OUT_FROM_TOP)/$(BOLT_IMG_TO_USE_OVERRIDE) $(PRODUCT_OUT_FROM_TOP)/android_bsu.elf $(PRODUCT_OUT_FROM_TOP)/bootloader.img
