@@ -173,7 +173,7 @@ Only the three quirks included above are recognized at this point:
             <Type name="audio/mpeg" >
                 <Limit name="channel-count" max="2" />
                 <Limit name="sample-rate" ranges="8000,11025,12000,16000,22050,24000,32000,44100,48000" />
-                <Limit name="concurrent-instances" max="1" />
+                <Limit name="concurrent-instances" max="2" />
             </Type>
             <Quirk name="requires-allocate-on-input-ports" />
         </MediaCodec>
