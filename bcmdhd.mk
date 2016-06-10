@@ -1,7 +1,7 @@
 # Brcm DHD related defines
 BRCM_DHD_PATH       := ${BRCM_NEXUS_INSTALL_PATH}/brcm_dhd
 BRCM_DHD_KO_NAME    := bcmdhd.ko
-BRCM_DHD_FW_NAME    ?= pcie-ag-pktctx-splitrx-amsdutx-txbf-p2p-mchan-idauth-idsup-tdls-mfp-sr-proptxstatus-pktfilter-wowlpf-ampduhostreorder-keepalive-wfds.bin
+BRCM_DHD_FW_NAME    ?= pcie-ag-pktctx-splitrx-amsdutx-txbf-p2p-mchan-idauth-idsup-tdls-mfp-sr-proptxstatus-pktfilter-wowlpf-ampduhostreorder-keepalive-wfds-bdo-ak.bin
 BRCM_DHD_NVRAM_DIR  ?= ${BROADCOM_DHD_SOURCE_PATH}/nvrams
 BRCM_DHD_NVRAM_NAME ?= bcm43570.nvm
 
