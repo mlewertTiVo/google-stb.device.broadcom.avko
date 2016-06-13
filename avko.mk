@@ -275,7 +275,6 @@ PRODUCT_COPY_FILES += \
     ${B_DHD_OBJ_ROOT}/nvm.txt:system/vendor/firmware/broadcom/dhd/nvrams/nvm.txt \
     ${BCM_VENDOR_STB_ROOT}/bcm_platform/conx/dhd/init.brcm_dhd.rc:root/init.brcm_dhd.rc \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     ${BCM_VENDOR_STB_ROOT}/bcm_platform/conx/dhd/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     ${BCM_VENDOR_STB_ROOT}/bcm_platform/conx/dhd/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
     ${BCM_VENDOR_STB_ROOT}/bcm_platform/conx/dhd/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
