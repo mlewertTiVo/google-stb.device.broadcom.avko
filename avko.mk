@@ -95,7 +95,6 @@ PRODUCT_COPY_FILES += \
     device/broadcom/avko/audio_policy_btusb.conf:system/etc/audio_policy.conf \
     device/broadcom/avko/gpio_keys_polled.kl:system/usr/keylayout/gpio_keys_polled_5.kl \
     device/broadcom/avko/nexus_silver_remote.kl:system/usr/keylayout/NexusIrHandler.kl \
-    device/broadcom/avko/sysconfig_gms.xml:system/etc/sysconfig/gms.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
