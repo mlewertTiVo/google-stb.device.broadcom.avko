@@ -82,7 +82,7 @@ Only the three quirks included above are recognized at this point:
         <Setting name="max-video-encoder-input-buffers" value="4" />
     </Settings>
     <Decoders>
-        <!-- Broadcom Video Decoder -->
+        <!-- Broadcom Video Decoder (Standard and Android Tunnel) -->
         <MediaCodec name="OMX.broadcom.video_decoder" >
             <Type name="video/avc" >
                 <Feature name="adaptive-playback" />
@@ -117,7 +117,47 @@ Only the three quirks included above are recognized at this point:
             <Quirk name="requires-allocate-on-input-ports" />
         </MediaCodec>
 
-        <!-- Broadcom VP9 decoder is not available on all platforms -->
+        <MediaCodec name="OMX.broadcom.video_decoder.tunnel" >
+            <Type name="video/avc" >
+                <Feature name="adaptive-playback" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="1920x1088" />
+                <Limit name="concurrent-instances" max="1" />
+            </Type>
+            <Type name="video/mpeg2" >
+                <Feature name="adaptive-playback" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="1920x1088" />
+                <Limit name="concurrent-instances" max="1" />
+            </Type>
+            <Type name="video/mp4v-es" >
+                <Feature name="adaptive-playback" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="1920x1088" />
+                <Limit name="concurrent-instances" max="1" />
+            </Type>
+            <Type name="video/3gpp" >
+                <Feature name="adaptive-playback" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="352x288" />
+                <Limit name="concurrent-instances" max="1" />
+            </Type>
+            <Type name="video/x-vnd.on2.vp8" >
+                <Feature name="adaptive-playback" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="1920x1088" />
+                <Limit name="concurrent-instances" max="1" />
+            </Type>
+            <Type name="video/hevc" >
+                <Feature name="adaptive-playback" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="3840x2160" />
+                <Limit name="concurrent-instances" max="1" />
+            </Type>
+            <Quirk name="requires-allocate-on-input-ports" />
+        </MediaCodec>
+
+        <!-- Broadcom VP9 (Standard and Android Tunnel) decoder is not available on all platforms -->
         <MediaCodec name="OMX.broadcom.video_decoder.vp9" >
             <Type name="video/x-vnd.on2.vp9" >
                 <Feature name="adaptive-playback" />
@@ -127,7 +167,16 @@ Only the three quirks included above are recognized at this point:
             <Quirk name="requires-allocate-on-input-ports" />
         </MediaCodec>
 
-        <!-- Broadcom Secure Video Decoder -->
+        <MediaCodec name="OMX.broadcom.video_decoder.vp9.tunnel" >
+            <Type name="video/x-vnd.on2.vp9" >
+                <Feature name="adaptive-playback" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="3840x2160" />
+            </Type>
+            <Quirk name="requires-allocate-on-input-ports" />
+        </MediaCodec>
+
+        <!-- Broadcom Secure Video Decoder (Standard) -->
         <MediaCodec name="OMX.broadcom.video_decoder.secure" >
             <Type name="video/avc" >
                 <Feature name="adaptive-playback" />
@@ -167,6 +216,10 @@ Only the three quirks included above are recognized at this point:
             </Type>
             <Quirk name="requires-allocate-on-input-ports" />
         </MediaCodec>
+
+        <!-- Broadcom Secure Video Decoder (Android Tunnel) -->
+
+        <!-- TBD -->
 
         <!-- Broadcom audio decoder -->
         <MediaCodec name="OMX.broadcom.audio_decoder.mp3" >
