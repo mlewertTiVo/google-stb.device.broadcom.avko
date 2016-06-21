@@ -144,7 +144,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # GMS package integration.
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.clientidbase=android-avko
+    ro.com.google.clientidbase=android-avko-tv
 
 # nx configuration.
 PRODUCT_PROPERTY_OVERRIDES += \
