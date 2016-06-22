@@ -112,7 +112,7 @@ Only the three quirks included above are recognized at this point:
             <Type name="video/hevc" >
                 <Feature name="adaptive-playback" />
                 <Limit name="concurrent-instances" max="1" />
-                <Limit name="size" min="2x2" max="4096x2160" />
+                <Limit name="size" min="2x2" max="3840x2160" />
             </Type>
             <Quirk name="requires-allocate-on-input-ports" />
         </MediaCodec>
@@ -162,7 +162,7 @@ Only the three quirks included above are recognized at this point:
             <Type name="video/x-vnd.on2.vp9" >
                 <Feature name="adaptive-playback" />
                 <Limit name="concurrent-instances" max="1" />
-                <Limit name="size" min="2x2" max="4096x2160" />
+                <Limit name="size" min="2x2" max="3840x2160" />
             </Type>
             <Quirk name="requires-allocate-on-input-ports" />
         </MediaCodec>
@@ -172,6 +172,7 @@ Only the three quirks included above are recognized at this point:
                 <Feature name="adaptive-playback" />
                 <Feature name="tunneled-playback" required="true" />
                 <Limit name="size" min="2x2" max="3840x2160" />
+                <Limit name="concurrent-instances" max="1" />
             </Type>
             <Quirk name="requires-allocate-on-input-ports" />
         </MediaCodec>
@@ -211,15 +212,58 @@ Only the three quirks included above are recognized at this point:
             <Type name="video/hevc" >
                 <Feature name="adaptive-playback" />
                 <Feature name="secure-playback" required="true" />
-                <Limit name="size" min="2x2" max="4096x2160" />
+                <Limit name="size" min="2x2" max="3840x2160" />
                 <Limit name="concurrent-instances" max="1" />
             </Type>
             <Quirk name="requires-allocate-on-input-ports" />
         </MediaCodec>
 
         <!-- Broadcom Secure Video Decoder (Android Tunnel) -->
-
-        <!-- TBD -->
+        <MediaCodec name="OMX.broadcom.video_decoder.tunnel.secure" >
+            <Type name="video/avc" >
+                <Feature name="adaptive-playback" />
+                <Feature name="secure-playback" required="true" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="1920x1088" />
+                <Limit name="concurrent-instances" max="1" />
+            </Type>
+            <Type name="video/mpeg2" >
+                <Feature name="adaptive-playback" />
+                <Feature name="secure-playback" required="true" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="1920x1088" />
+                <Limit name="concurrent-instances" max="1" />
+            </Type>
+            <Type name="video/mp4v-es" >
+                <Feature name="adaptive-playback" />
+                <Feature name="secure-playback" required="true" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="1920x1088" />
+                <Limit name="concurrent-instances" max="1" />
+            </Type>
+            <Type name="video/3gpp" >
+                <Feature name="adaptive-playback" />
+                <Feature name="secure-playback" required="true" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="352x288" />
+                <Limit name="concurrent-instances" max="1" />
+            </Type>
+            <Type name="video/x-vnd.on2.vp8" >
+                <Feature name="adaptive-playback" />
+                <Feature name="secure-playback" required="true" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="1920x1088" />
+                <Limit name="concurrent-instances" max="1" />
+            </Type>
+            <Type name="video/hevc" >
+                <Feature name="adaptive-playback" />
+                <Feature name="secure-playback" required="true" />
+                <Feature name="tunneled-playback" required="true" />
+                <Limit name="size" min="2x2" max="3840x2160" />
+                <Limit name="concurrent-instances" max="1" />
+            </Type>
+            <Quirk name="requires-allocate-on-input-ports" />
+        </MediaCodec>
 
         <!-- Broadcom audio decoder -->
         <MediaCodec name="OMX.broadcom.audio_decoder.mp3" >
