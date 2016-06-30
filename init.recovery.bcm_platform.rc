@@ -1,14 +1,19 @@
 import /init.recovery.blockdev.rc
-import /init.recovery.nx.dynheap.rc
 
 on early-init
-    export LD_LIBRARY_PATH /system/lib
-    export SAGEBIN_PATH /system/bin
-    export NEXUS_DEVICE_NODE /dev/mali
+   export LD_LIBRARY_PATH /system/lib
+   export SAGEBIN_PATH /system/bin
+   export NEXUS_DEVICE_NODE /dev/mali
+   setprop hw.nexus.platforminit none
+   insmod /system/lib/nexus.ko devname="mali" config="auto_subindex=true"
+   start nxmini
 
 service nxmini /sbin/nxmini
-    oneshot
-    seclabel u:r:nxmini:s0
+   oneshot
+   seclabel u:r:nxmini:s0
+   user root
+   group system
+   socket nxserver stream 0666 root system
 
 on property:hw.nexus.platforminit=on
-    insmod /system/lib/bcmnexusfb.ko
+   insmod /system/lib/bcmnexusfb.ko

@@ -19,14 +19,35 @@
 #include "common.h"
 #include "device.h"
 #include "screen_ui.h"
+#include <cutils/properties.h>
 
 class BcmRecoveryUI : public ScreenRecoveryUI {
   public:
+    virtual KeyAction CheckKey(int key, bool is_long_press) {
+
+        if (key == KEY_HOME) {
+            return TOGGLE;
+        }
+
+        return RecoveryUI::CheckKey(key, is_long_press);
+    }
+
     void Init() override {
         ScreenRecoveryUI::Init();
     }
 };
 
 Device* make_device() {
-    return new Device(new BcmRecoveryUI);
+   char value[PROPERTY_VALUE_MAX];
+
+   for (;;) {
+      memset(value, 0, sizeof(value));
+      property_get("hw.nexus.platforminit", value, NULL);
+      if (strlen(value) && !strncmp(value, "on", strlen(value))) {
+         break;
+      }
+      sleep(1);
+   }
+
+   return new Device(new BcmRecoveryUI);
 }
