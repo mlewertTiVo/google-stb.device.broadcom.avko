@@ -20,6 +20,7 @@ allow nxserver shell_exec:file execute_no_trans;
 allow nxserver sysfs:file write;
 allow nxserver sysfs_devices_system_cpu:file write;
 allow nxserver system_file:file execute_no_trans;
+allow nxserver nexus_prop:property_service set;
 allow nxserver system_prop:property_service set;
 allow nxserver uhid_device:chr_file { write ioctl open };
 allow nxserver gpu_device:chr_file ioctl;
