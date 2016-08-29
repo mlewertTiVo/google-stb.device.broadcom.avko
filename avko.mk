@@ -200,6 +200,7 @@ ifeq (,$(filter redux,$(LOCAL_RUN_TARGET)))
       BcmTVInput \
       BcmOtaUpdater \
       BcmKeyInterceptor \
+      BcmSplash \
       camera.avko \
       gralloc.avko \
       hdmi_cec.avko \

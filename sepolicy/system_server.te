@@ -10,3 +10,4 @@ allow system_server shell_exec:file { read open execute execute_no_trans };
 allow system_server zygote_exec:file { execute execute_no_trans };
 allow system_server nxserver_socket:sock_file write;
 allow system_server nexus_service:service_manager find;
+allow system_server nexus_prop:property_service set;
