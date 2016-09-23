@@ -38,6 +38,7 @@ allow nxserver hdmi_hpd_device:chr_file { read write open getattr ioctl };
 allow nxserver watchdog_device:chr_file rw_file_perms;
 allow nxserver self:udp_socket { create ioctl };
 allow nxserver self:capability { net_raw net_admin };
+allow nxserver self:capability { sys_time dac_override dac_read_search };
 
 allow nxserver nexus_service:service_manager add;
 allow nxserver watchdog_device:chr_file rw_file_perms;
@@ -45,6 +46,8 @@ allow nxserver watchdog_device:chr_file rw_file_perms;
 type_transition nxserver system_data_file:file nexus_log_file "nexus.log";
 allow nxserver nexus_log_file:file { open create read write setattr getattr unlink };
 allow nxserver system_data_file:dir { search setattr write add_name remove_name };
+allow nxserver media_data_file:dir create_dir_perms;
+allow nxserver media_data_file:file create_file_perms;
 allow nxserver self:udp_socket { write create setattr ioctl };
 allow nxserver self:capability { net_raw net_admin };
 
