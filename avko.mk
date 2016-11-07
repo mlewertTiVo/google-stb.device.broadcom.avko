@@ -86,6 +86,7 @@ PRODUCT_COPY_FILES += \
     device/broadcom/avko/init.broadcomstb.usb.configfs.rc:root/init.bcm_platform.usb.rc \
     device/broadcom/avko/init.eth.rc:root/init.eth.rc \
     device/broadcom/avko/init.recovery.bcm_platform.rc:root/init.recovery.avko.rc \
+    device/broadcom/avko/init.recovery.configfs.rc:root/init.recovery.configfs.rc \
     device/broadcom/avko/media_codecs.xml:system/etc/media_codecs.xml \
     device/broadcom/avko/media_profiles.xml:system/etc/media_profiles.xml \
     device/broadcom/avko/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \

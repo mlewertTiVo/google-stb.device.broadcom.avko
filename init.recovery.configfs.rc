@@ -1,0 +1,13 @@
+on property:sys.usb.ffs.ready=1
+   write /config/usb_gadget/g1/UDC "none"
+   rmdir /config/usb_gadget/g1/configs/b.1
+   mkdir /config/usb_gadget/g1/configs/b.1 0777 shell shell
+   mkdir /config/usb_gadget/g1/configs/b.1/strings/0x409 0770 shell shell
+   write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "ffs1"
+   rm /config/usb_gadget/g1/configs/b.1/f1
+   rm /config/usb_gadget/g1/configs/b.1/f2
+   symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1
+   write /config/usb_gadget/g1/idVendor 0x18D1
+   write /config/usb_gadget/g1/idProduct 0x4EE0
+   write /config/usb_gadget/g1/UDC "f0472000.bdc_v2"
+
