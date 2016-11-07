@@ -16,14 +16,17 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
 #include <stdbool.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <cutils/properties.h>
 #include <sys/mman.h>
-#include "edify/expr.h"
 #include <errno.h>
+#include "edify/expr.h"
+#include "error_code.h"
 
 #define FORCE_RW_OPT            "0"
 #define EMMC_SIZE               0x400000
@@ -149,42 +152,42 @@ Value* FlashBoltAvkoFn(const char *name, State *state, int argc, Expr * argv[]) 
     FILE *f = NULL;
 
     if (argc != 1) {
-        ErrorAbort(state, "%s() expected 1 arg, got %d", name, argc);
+        ErrorAbort(state, kArgsParsingFailure, "%s() expected 1 arg, got %d", name, argc);
         return NULL;
     }
 
     if (ReadArgs(state, argv, 1, &filename) < 0) {
-        ErrorAbort(state, "%s() invalid args ", name);
+        ErrorAbort(state, kArgsParsingFailure, "%s() invalid args ", name);
         return NULL;
     }
 
     if (filename == NULL || strlen(filename) == 0) {
-        ErrorAbort(state, "filename argument to %s can't be empty", name);
+        ErrorAbort(state, kArgsParsingFailure, "filename argument to %s can't be empty", name);
         goto done;
     }
 
     if ((f = fopen(filename, "rb")) == NULL) {
-        ErrorAbort(state, "Unable to open file %s: %s ", filename, strerror(errno));
+        ErrorAbort(state, kFileOpenFailure, "Unable to open file %s: %s ", filename, strerror(errno));
         goto done;
     }
 
     fseek(f, 0, SEEK_END);
     bolt_size = ftell(f);
     if (bolt_size < 0) {
-        ErrorAbort(state, "Unable to get bolt_size");
+        ErrorAbort(state, kLseekFailure, "Unable to get bolt_size");
         goto done;
     }
     fseek(f, 0, SEEK_SET);
 
-    if ((buffer = malloc(bolt_size)) == NULL) {
-        ErrorAbort(state, "Unable to alloc bolt flash buffer of size %d", bolt_size);
+    if ((buffer = reinterpret_cast<unsigned char*>(malloc(bolt_size))) == NULL) {
+        ErrorAbort(state, kVendorFailure, "Unable to alloc bolt flash buffer of size %d", bolt_size);
         goto done;
     }
     fread(buffer, bolt_size, 1, f);
     fclose(f);
 
     if (write_bolt_emmc(buffer, bolt_size) != 0 ) {
-        ErrorAbort(state, "Unable to flash bolt in emmc");
+        ErrorAbort(state, kFwriteFailure, "Unable to flash bolt in emmc");
         free(buffer);
         goto done;
     }
@@ -208,42 +211,42 @@ Value* FlashGPTAvkoFn(const char *name, State *state, int argc, Expr * argv[]) {
     FILE *f = NULL;
 
     if (argc != 1) {
-        ErrorAbort(state, "%s() expected 1 arg, got %d", name, argc);
+        ErrorAbort(state, kArgsParsingFailure, "%s() expected 1 arg, got %d", name, argc);
         return NULL;
     }
 
     if (ReadArgs(state, argv, 1, &filename) < 0) {
-        ErrorAbort(state, "%s() invalid args ", name);
+        ErrorAbort(state, kArgsParsingFailure, "%s() invalid args ", name);
         return NULL;
     }
 
     if (filename == NULL || strlen(filename) == 0) {
-        ErrorAbort(state, "filename argument to %s can't be empty", name);
+        ErrorAbort(state, kArgsParsingFailure, "filename argument to %s can't be empty", name);
         goto done;
     }
 
     if ((f = fopen(filename, "rb")) == NULL) {
-        ErrorAbort(state, "Unable to open file %s: %s ", filename, strerror(errno));
+        ErrorAbort(state, kFileOpenFailure, "Unable to open file %s: %s ", filename, strerror(errno));
         goto done;
     }
 
     fseek(f, 0, SEEK_END);
     gpt_size = ftell(f);
     if (gpt_size < 0) {
-        ErrorAbort(state, "Unable to get gpt_size");
+        ErrorAbort(state, kLseekFailure, "Unable to get gpt_size");
         goto done;
     }
     fseek(f, 0, SEEK_SET);
 
-    if ((buffer = malloc(gpt_size)) == NULL) {
-        ErrorAbort(state, "Unable to alloc gpt flash buffer of size %d", gpt_size);
+    if ((buffer = reinterpret_cast<unsigned char*>(malloc(gpt_size))) == NULL) {
+        ErrorAbort(state, kVendorFailure, "Unable to alloc gpt flash buffer of size %d", gpt_size);
         goto done;
     }
     fread(buffer, gpt_size, 1, f);
     fclose(f);
 
     if (write_gpt_emmc(buffer, gpt_size) != 0 ) {
-        ErrorAbort(state, "Unable to flash gpt in emmc");
+        ErrorAbort(state, kFwriteFailure, "Unable to flash gpt in emmc");
         free(buffer);
         goto done;
     }
