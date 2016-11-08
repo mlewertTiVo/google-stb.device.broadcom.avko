@@ -2,11 +2,11 @@ import /init.recovery.blockdev.rc
 import /init.recovery.configfs.rc
 
 on early-init
-   export LD_LIBRARY_PATH /oem/lib
-   export SAGEBIN_PATH /oem/bin
+   export LD_LIBRARY_PATH /system/lib
+   export SAGEBIN_PATH /system/bin
    export NEXUS_DEVICE_NODE /dev/mali
    setprop dyn.nx.state none
-   insmod /oem/lib/nexus.ko devname="mali" config="auto_subindex=true"
+   insmod /system/lib/nexus.ko devname="mali" config="auto_subindex=true"
    start nxmini
 
 on init
@@ -29,5 +29,5 @@ service nxmini /sbin/nxmini
    socket nxserver stream 0666 root system
 
 on property:dyn.nx.state=loaded
-   insmod /oem/lib/bcmnexusfb.ko
+   insmod /system/lib/bcmnexusfb.ko
 
