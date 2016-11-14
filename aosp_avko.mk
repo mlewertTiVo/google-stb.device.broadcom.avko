@@ -14,14 +14,9 @@
 # limitations under the License.
 #
 
-export LOCAL_RUN_TARGET := aosp
 include device/broadcom/avko/avko.mk
 
-PRODUCT_NAME := aosp_avko
-PRODUCT_DEVICE := avko
-PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Google
-
-# exporting toolchains path for kernel image+modules
-export PATH := ${ANDROID}/vendor/broadcom/prebuilts/stbgcc-4.8-1.5/bin:${PATH}
-
+PRODUCT_NAME                     := aosp_avko
+PRODUCT_MODEL                    := avko
+PRODUCT_BRAND                    := google
+PRODUCT_DEVICE                   := avko

@@ -1,5 +1,0 @@
-broadcom.hwc                                    u:object_r:nexus_service:s0
-android.media.IPmLibService                     u:object_r:nexus_service:s0
-com.broadcom.bse.nexusInterface                 u:object_r:nexus_service:s0
-com.broadcom.tunerhal.TunerInterface            u:object_r:tv_input_service:s0
-

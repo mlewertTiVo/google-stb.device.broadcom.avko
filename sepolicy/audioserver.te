@@ -1,8 +1,0 @@
-allow audioserver nexus_data_file:dir { search read };
-allow audioserver nexus_data_file:file { read open getattr };
-allow audioserver nxserver_socket:sock_file write;
-allow audioserver nxserver:unix_stream_socket connectto;
-allow audioserver gpu_device:chr_file rw_file_perms;
-
-set_prop(audioserver, nexus_prop);
-

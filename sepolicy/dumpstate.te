@@ -1,2 +1,0 @@
-allow dumpstate nxserver:binder call;
-allow dumpstate hwcbinder:binder call;

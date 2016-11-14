@@ -1,8 +1,0 @@
-allow priv_app nexus_service:service_manager find;
-allow priv_app nxserver_socket:sock_file write;
-allow priv_app nxserver:binder call;
-allow priv_app nxserver:unix_stream_socket connectto;
-allow priv_app nexus_data_file:dir { search read };
-allow priv_app nexus_data_file:file { read open getattr };
-
-get_prop(priv_app, nexus_prop);

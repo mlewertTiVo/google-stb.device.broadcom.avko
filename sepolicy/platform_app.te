@@ -1,8 +1,0 @@
-allow platform_app nxserver:binder call;
-allow platform_app nxserver:unix_stream_socket connectto;
-allow platform_app nexus_data_file:dir { search read };
-allow platform_app nexus_data_file:file { read open getattr };
-allow platform_app nxserver_socket:sock_file write;
-allow platform_app nexus_service:service_manager find;
-
-set_prop(platform_app, nexus_prop);

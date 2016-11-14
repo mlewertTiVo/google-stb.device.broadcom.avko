@@ -1,5 +1,0 @@
-allow update_engine rootfs:file { open read };
-allow update_engine rootfs:dir  { open read search };
-allow update_engine block_device:dir search;
-allow update_engine eio_block_device:blk_file rw_file_perms;
-allow update_engine eio_block_device:blk_file getattr;

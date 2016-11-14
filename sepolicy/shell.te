@@ -1,5 +1,0 @@
-allow shell nxserver:binder call;
-allow shell nxserver:unix_stream_socket connectto;
-allow shell nxserver_socket:sock_file write;
-
-get_prop(shell, nexus_prop);

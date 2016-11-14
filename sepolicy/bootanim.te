@@ -1,9 +1,0 @@
-allow bootanim nxserver:binder call;
-allow bootanim nxserver:unix_stream_socket connectto;
-allow bootanim nxserver_socket:sock_file write;
-allow bootanim nexus_service:service_manager find;
-
-allow bootanim nexus_data_file:dir { search read };
-allow bootanim nexus_data_file:file { read open getattr };
-
-set_prop(bootanim, nexus_prop);

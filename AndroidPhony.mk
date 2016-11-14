@@ -1,5 +1,2 @@
-.PHONY: bootloader.img
-bootloader.img: build_bootloaderimg
+include device/broadcom/common/AndroidPhony.mk
 
-.PHONY: gpt.bin
-gpt.bin: makegpt
