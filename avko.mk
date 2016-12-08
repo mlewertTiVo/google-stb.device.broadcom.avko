@@ -34,21 +34,6 @@ LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_codecs_pe
 export LOCAL_DEVICE_MEDIA
 
 # optional device override/addition.
-LOCAL_PROPERTY_OVERRIDES         := ro.opengles.version=196608
-LOCAL_PROPERTY_OVERRIDES         += debug.hwui.render_dirty_regions=false
-LOCAL_PROPERTY_OVERRIDES         += ro.nx.heap.video_secure=86m
-LOCAL_PROPERTY_OVERRIDES         += ro.nx.heap.main=112m
-LOCAL_PROPERTY_OVERRIDES         += ro.nx.heap.drv_managed=0m
-LOCAL_PROPERTY_OVERRIDES         += ro.nx.mma=1
-LOCAL_PROPERTY_OVERRIDES         += ro.nx.heap.grow=8m
-LOCAL_PROPERTY_OVERRIDES         += ro.nx.heap.shrink=2m
-LOCAL_PROPERTY_OVERRIDES         += ro.nx.heap.gfx=64m
-LOCAL_PROPERTY_OVERRIDES         += ro.nx.capable.cb=1
-LOCAL_PROPERTY_OVERRIDES         += ro.nx.capable.si=1
-LOCAL_PROPERTY_OVERRIDES         += ro.rfkilldisabled=1
-LOCAL_PROPERTY_OVERRIDES         += ro.nrdp.modelgroup=AVKO
-export LOCAL_PROPERTY_OVERRIDES
-
 export LOCAL_DEVICE_OVERLAY      := device/broadcom/avko/overlay
 export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/avko/sepolicy-block
 export LOCAL_DEVICE_AON_GPIO     := device/broadcom/avko/aon_gpio.cfg:system/vendor/power/aon_gpio.cfg
