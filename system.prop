@@ -16,6 +16,7 @@ ro.nx.capable.cb=1
 ro.nx.capable.si=1
 
 ro.rfkilldisabled=1
+ro.nx.eth.irq_mode_mask=3:2
 
 # google assigned client id
 ro.com.google.clientidbase=android-avko-tv
