@@ -312,7 +312,7 @@ Only the three quirks included above are recognized at this point:
                 <Limit name="size" min="176x144" max="1280x720" />
                 <Limit name="alignment" value="8x8" />
                 <Limit name="block-size" value="16x16" />
-                <Limit name="frame-rate" range="15-30" />
+                <Limit name="frame-rate" range="10-30" />
                 <Limit name="bitrate" range="1-50000000" />
                 <Limit name="concurrent-instances" max="1" />
             </Type>
@@ -320,7 +320,7 @@ Only the three quirks included above are recognized at this point:
                 <Limit name="size" min="176x144" max="1280x720" />
                 <Limit name="alignment" value="8x8" />
                 <Limit name="block-size" value="16x16" />
-                <Limit name="frame-rate" range="15-30" />
+                <Limit name="frame-rate" range="10-30" />
                 <Limit name="bitrate" range="1-10000000" />
                 <Limit name="concurrent-instances" max="1" />
             </Type>
