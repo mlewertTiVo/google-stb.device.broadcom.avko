@@ -61,7 +61,7 @@ PRODUCT_BRAND                    := google
 PRODUCT_DEVICE                   := avko
 
 # additional setup per device.
-ADDITIONAL_DEFAULT_PROPERTIES    += ro.hardware=avko
-ADDITIONAL_DEFAULT_PROPERTIES    += ro.product.board=avko
+PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=avko
+PRODUCT_PROPERTY_OVERRIDES    += ro.product.board=avko
 
 
