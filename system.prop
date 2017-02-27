@@ -23,3 +23,5 @@ ro.com.google.clientidbase=android-avko-tv
 
 ro.nrdp.modelgroup=AVKO
 
+# gfx driver versioning package.
+ro.gfx.driver.0=gfxdriver-bcmstb
