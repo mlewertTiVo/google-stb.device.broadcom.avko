@@ -32,7 +32,7 @@
     <key keyCode="KEYCODE_TV_INPUT" component="com.google.android.tv/.receiver.GlobalKeyReceiver" />
     <!-- OEMs might want to add more custom global key handlings for TV specific key codes such as
          KEYCODE_TVGUIDE and KEYCODE_DVR. -->
-    <key keyCode="KEYCODE_PAIRING" component="com.broadcom.BcmKeyInterceptor/.BcmKeyInterceptorReceiver" />
-    <key keyCode="KEYCODE_TV_NETWORK" component="com.broadcom.BcmKeyInterceptor/.BcmKeyInterceptorReceiver" />
-    <key keyCode="KEYCODE_BUTTON_16" component="com.broadcom.BcmKeyInterceptor/.BcmKeyInterceptorReceiver" />
+    <key keyCode="KEYCODE_PAIRING" component="com.broadcom.customizer/.BcmCustomizerReceiver" />
+    <key keyCode="KEYCODE_TV_NETWORK" component="com.broadcom.customizer/.BcmCustomizerReceiver" />
+    <key keyCode="KEYCODE_BUTTON_16" component="com.broadcom.customizer/.BcmCustomizerReceiver" />
 </global_keys>
