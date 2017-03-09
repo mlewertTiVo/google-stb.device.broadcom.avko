@@ -45,19 +45,20 @@ export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/default.conf
 export V3D_VARIANT               := vc5
 export BXPT_POWER_MANAGEMENT     := n
 export BOLT_BOARD_VB             := BCM97252SSFFG_NOAVS
+#export HAL_GR_VERSION            := v-1.0
 
 # kernel command line.
 LOCAL_DEVICE_KERNEL_CMDLINE      := mem=1012m@0m mem=1024m@2048m
 LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=339m@669m bmem=237m@2048m
 LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=780m@2288m
 LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x3F400000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
+#LOCAL_DEVICE_KERNEL_CMDLINE      += loglevel=0
 export LOCAL_DEVICE_KERNEL_CMDLINE
 
-# *** WARNING: O-BRING-UP: no drm's, no wifi.
+# *** WARNING: O-BRING-UP: no drm's.
 export ANDROID_SUPPORTS_WIDEVINE  := n
 export ANDROID_SUPPORTS_PLAYREADY := n
-export HW_WIFI_SUPPORT            := n
-# *** WARNING: O-BRING-UP: no drm's, no wifi.
+# *** WARNING: O-BRING-UP: no drm's.
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
