@@ -1,3 +1,4 @@
+#
 # mandatory device configuration.
 export NEXUS_PLATFORM            := 97439
 export BCHP_VER                  := B0
