@@ -37,7 +37,7 @@ export LOCAL_DEVICE_MEDIA
 export LOCAL_DEVICE_OVERLAY      := device/broadcom/avko/overlay
 export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/avko/sepolicy-block
 export LOCAL_DEVICE_AON_GPIO     := device/broadcom/avko/aon_gpio.cfg:system/vendor/power/aon_gpio.cfg
-export LOCAL_DEVICE_KEY_POLL     := device/broadcom/common/keylayout/gpio_keys_polled.kl:system/usr/keylayout/gpio_keys_polled_5.kl
+export LOCAL_DEVICE_KEY_POLL     := device/broadcom/common/keylayout/gpio_keys_polled.kl:system/usr/keylayout/gpio_keys_polled.kl
 export LOCAL_DEVICE_REFERENCE_BUILD := device/broadcom/avko/reference_build.mk
 export LOCAL_DEVICE_BT_CONFIG    := device/broadcom/avko/bluetooth/vnd_avko.txt
 export LOCAL_DEVICE_USERDATA     := 6137298432 # ~5.7G
