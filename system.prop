@@ -14,6 +14,7 @@ ro.nx.heap.gfx=64m
 # hwc optimizations
 ro.nx.capable.cb=1
 ro.nx.capable.si=1
+ro.sf.lcd_density=320
 
 ro.rfkilldisabled=1
 ro.nx.eth.irq_mode_mask=3:2
