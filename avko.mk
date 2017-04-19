@@ -37,7 +37,7 @@ export LOCAL_DEVICE_MEDIA
 export LOCAL_DEVICE_OVERLAY      := device/broadcom/avko/overlay
 export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/avko/sepolicy-block
 export LOCAL_DEVICE_AON_GPIO     := device/broadcom/avko/aon_gpio.cfg:vendor/power/aon_gpio.cfg
-export LOCAL_DEVICE_KEY_POLL     := device/broadcom/common/keylayout/gpio_keys_polled.kl:system/usr/keylayout/gpio_keys_polled_5.kl
+export LOCAL_DEVICE_KEY_POLL     := device/broadcom/common/keylayout/gpio_keys_polled.kl:system/usr/keylayout/gpio_keys_polled.kl
 export LOCAL_DEVICE_REFERENCE_BUILD := device/broadcom/avko/reference_build.mk
 export LOCAL_DEVICE_BT_CONFIG    := device/broadcom/avko/bluetooth/vnd_avko.txt
 export LOCAL_DEVICE_USERDATA     := 6137298432 # ~5.7G
@@ -45,14 +45,12 @@ export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/default.conf
 export V3D_VARIANT               := vc5
 export BXPT_POWER_MANAGEMENT     := n
 export BOLT_BOARD_VB             := BCM97252SSFFG_NOAVS
-#export HAL_GR_VERSION            := v-1.0
 
 # kernel command line.
 LOCAL_DEVICE_KERNEL_CMDLINE      := mem=1012m@0m mem=1024m@2048m
 LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=339m@669m bmem=237m@2048m
 LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=780m@2288m
 LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x3F400000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
-#LOCAL_DEVICE_KERNEL_CMDLINE      += loglevel=0
 export LOCAL_DEVICE_KERNEL_CMDLINE
 
 # *** WARNING: O-BRING-UP: no drm's.

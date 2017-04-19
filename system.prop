@@ -14,6 +14,7 @@ ro.nx.heap.gfx=64m
 # hwc optimizations
 ro.nx.capable.cb=1
 ro.nx.capable.si=1
+ro.sf.lcd_density=320
 
 ro.rfkilldisabled=1
 ro.nx.eth.irq_mode_mask=3:2
@@ -22,6 +23,7 @@ ro.nx.eth.irq_mode_mask=3:2
 ro.com.google.clientidbase=android-avko-tv
 
 ro.nrdp.modelgroup=AVKO
+ro.nrdp.validation=ninja_4
 
 # gfx driver versioning package.
 ro.gfx.driver.0=gfxdriver-bcmstb
