@@ -1,3 +1,0 @@
-require board=avko
-require version-bootloader=v1.21-123-ga56144c
-

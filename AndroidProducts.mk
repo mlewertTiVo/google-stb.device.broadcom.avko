@@ -1,2 +1,3 @@
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/avko.mk
+PRODUCT_MAKEFILES += $(LOCAL_DIR)/avko_nvi.mk
 PRODUCT_MAKEFILES += $(LOCAL_DIR)/aosp_avko.mk
