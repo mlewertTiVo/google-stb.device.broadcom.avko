@@ -18,6 +18,7 @@ include device/broadcom/avko/common.mk
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
+$(call inherit-product, build/make/target/product/product_launched_with_l.mk)
 PRODUCT_NAME                     := avko_nvi
 PRODUCT_MODEL                    := avko_nvi
 PRODUCT_BRAND                    := broadcom
