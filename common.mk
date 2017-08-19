@@ -38,8 +38,8 @@ export BXPT_POWER_MANAGEMENT     := n
 export BOLT_BOARD_VB             := BCM97252SSFFG_NOAVS
 
 # kernel command line.
-LOCAL_DEVICE_KERNEL_CMDLINE      := mem=1012m@0m mem=1024m@2048m
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=339m@669m bmem=237m@2048m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=780m@2288m
-LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x3F400000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
+LOCAL_DEVICE_KERNEL_CMDLINE      := mem=984m@0m mem=32m@992m mem=1024m@2048m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=322m@662m bmem=260m@2048m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=736m@2308m
+LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x3D800000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
 export LOCAL_DEVICE_KERNEL_CMDLINE
