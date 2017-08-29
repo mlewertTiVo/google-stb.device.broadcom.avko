@@ -24,4 +24,4 @@ PRODUCT_DEVICE                   := avko
 
 # additional setup per device.
 PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=avko
-PRODUCT_PROPERTY_OVERRIDES    += ro.product.board=avko
+TARGET_BOOTLOADER_BOARD_NAME := avko
