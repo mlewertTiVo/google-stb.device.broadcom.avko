@@ -5,7 +5,11 @@ export NEXUS_USE_7439_SFF        := y
 export PLATFORM                  := 97439
 
 # compile the rc's for the device.
+ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.ft.nx.rc:root/init.nx.rc
+else
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.nx.rc:root/init.nx.rc
+endif
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.fs.default.rc:root/init.fs.rc  # NOT verity
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.eth.eth0.rc:root/init.eth.rc   # uses 'eth0'
 LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.block.rc:root/init.block.rc   # block devices
@@ -27,7 +31,11 @@ export LOCAL_DEVICE_MEDIA
 
 # optional device override/addition.
 export LOCAL_DEVICE_OVERLAY      := device/broadcom/avko/overlay
-export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/avko/sepolicy-block
+LOCAL_DEVICE_SEPOLICY_BLOCK      := device/broadcom/avko/sepolicy/block
+ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
+LOCAL_DEVICE_SEPOLICY_BLOCK      += device/broadcom/avko/sepolicy/treble
+endif
+export LOCAL_DEVICE_SEPOLICY_BLOCK
 export LOCAL_DEVICE_AON_GPIO     := device/broadcom/avko/aon_gpio.cfg:$(TARGET_COPY_OUT_VENDOR)/power/aon_gpio.cfg
 export LOCAL_DEVICE_KEY_POLL     := device/broadcom/common/keylayout/gpio_keys_polled.kl:system/usr/keylayout/gpio_keys_polled.kl
 export LOCAL_DEVICE_REFERENCE_BUILD := device/broadcom/avko/reference_build.mk
@@ -39,7 +47,7 @@ export BOLT_BOARD_VB             := BCM97252SSFFG_NOAVS
 
 # kernel command line.
 LOCAL_DEVICE_KERNEL_CMDLINE      := mem=984m@0m mem=32m@992m mem=1024m@2048m
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=322m@662m bmem=260m@2048m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=736m@2308m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=326m@658m bmem=263m@2809m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=731m@2048m
 LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x3D800000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
 export LOCAL_DEVICE_KERNEL_CMDLINE
