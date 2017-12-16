@@ -1,6 +1,6 @@
 # non-vendor-image layout: there is no separate partition for vendor.img in O+. 	1
 export LOCAL_NVI_LAYOUT          := y
-export ANDROID_PRODUCT_OUT       := avko_nvi
+export LOCAL_PRODUCT_OUT       := avko_nvi
 
 LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.nvi.default:root/fstab.avko_nvi
 LOCAL_DEVICE_FSTAB               += device/broadcom/common/fstab/fstab.nvi.default:root/fstab.bcm

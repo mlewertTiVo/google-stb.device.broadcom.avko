@@ -1,4 +1,4 @@
-export ANDROID_PRODUCT_OUT       := avko
+export LOCAL_PRODUCT_OUT       := avko
 
 LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.default.early:root/fstab.avko
 LOCAL_DEVICE_FSTAB               += device/broadcom/common/fstab/fstab.default.early:root/fstab.bcm
