@@ -4,6 +4,10 @@ export BCHP_VER                  := B0
 export NEXUS_USE_7439_SFF        := y
 export PLATFORM                  := 97439
 
+# binary distribution
+export BCM_BINDIST_LIBS_ROOT     := vendor/broadcom/prebuilts/nximg/4.1/avko
+export BCM_BINDIST_KNL_ROOT      := device/broadcom/avko-kernel/4.1
+
 # compile the rc's for the device.
 ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.ft.nx.rc:root/init.nx.rc
