@@ -5,6 +5,7 @@ export NEXUS_USE_7439_SFF        := y
 export PLATFORM                  := 97439
 
 # binary distribution
+export BCM_BINDIST_BL_ROOT       := vendor/broadcom/prebuilts/bootloaders/avko
 export BCM_BINDIST_LIBS_ROOT     := vendor/broadcom/prebuilts/nximg/4.1/avko
 export BCM_BINDIST_KNL_ROOT      := device/broadcom/avko-kernel/4.1
 
