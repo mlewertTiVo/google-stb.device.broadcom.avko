@@ -1,2 +1,2 @@
 require board=avko
-require version-bootloader=v1.36-229-g82aded4
+require version-bootloader=v1.37-232-gab69b1e
