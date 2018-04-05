@@ -2,14 +2,14 @@
 export LOCAL_NVI_LAYOUT          := y
 export LOCAL_PRODUCT_OUT         := avko_nvi
 
-LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.nvi.default:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.avko_nvi
-LOCAL_DEVICE_FSTAB               += device/broadcom/common/fstab/fstab.nvi.default:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
+LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.nvi.default:root/fstab.avko_nvi
+LOCAL_DEVICE_FSTAB               += device/broadcom/common/fstab/fstab.nvi.default:root/fstab.bcm
 export LOCAL_DEVICE_FSTAB
 
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/default.nvi.conf
 
-LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.avko_nvi.rc
-LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
+LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.nvi.rc:root/init.avko_nvi.rc
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:root/ueventd.avko_nvi.rc
 
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.avko_nvi.rc
 

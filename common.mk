@@ -5,6 +5,7 @@ export NEXUS_USE_7439_SFF        := y
 export PLATFORM                  := 97439
 
 # compile the rc's for the device.
+ifneq ($(LOCAL_NVI_LAYOUT),y)
 ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.ft.nx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nx.rc
 else
@@ -14,6 +15,13 @@ LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.fs.default.r
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.eth.eth0.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.eth.rc   # uses 'eth0'
 LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.block.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.block.rc      # block devices
 LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.bcm.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.bcm.usb.rc  # uses 'configfs'
+else
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.nx.rc:root/init.nx.rc
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.nvi.fs.default.rc:root/init.fs.rc  # NOT verity
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.eth.eth0.rc:root/init.eth.rc       # uses 'eth0'
+LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.block.rc:root/init.block.rc          # block devices
+LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.bcm.usb.rc:root/init.bcm.usb.rc      # uses 'configfs'
+endif
 export LOCAL_DEVICE_RCS
 
 LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/avko/rcs/init.block.rc:root/init.recovery.block.rc        # block devices
