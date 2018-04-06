@@ -12,18 +12,26 @@ export BCM_DIST_FORCED_BINDIST   := y
 export BCM_DIST_BLIM_BINS        := y
 
 # compile the rc's for the device.
+ifneq ($(LOCAL_NVI_LAYOUT),y)
 ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
-LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.ft.nx.rc:root/init.nx.rc
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.ft.nx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nx.rc
+else
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.nx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nx.rc
+endif
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.fs.default.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.fs.rc  # NOT verity
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.eth.eth0.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.eth.rc   # uses 'eth0'
+LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.block.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.block.rc      # block devices
+LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.bcm.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.bcm.usb.rc  # uses 'configfs'
 else
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.nx.rc:root/init.nx.rc
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.nvi.fs.default.rc:root/init.fs.rc  # NOT verity
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.eth.eth0.rc:root/init.eth.rc       # uses 'eth0'
+LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.block.rc:root/init.block.rc          # block devices
+LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.bcm.usb.rc:root/init.bcm.usb.rc      # uses 'configfs'
 endif
-LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.fs.default.rc:root/init.fs.rc  # NOT verity
-LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.eth.eth0.rc:root/init.eth.rc   # uses 'eth0'
-LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.block.rc:root/init.block.rc   # block devices
-LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.bcm.usb.rc:root/init.bcm.usb.rc   # uses 'configfs'
 export LOCAL_DEVICE_RCS
 
-LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/avko/rcs/init.block.rc:root/init.recovery.block.rc   # block devices
+LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/avko/rcs/init.block.rc:root/init.recovery.block.rc        # block devices
 LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/avko/rcs/init.recovery.usb.rc:root/init.recovery.usb.rc   # uses 'configfs'
 export LOCAL_DEVICE_RECOVERY_RCS
 
@@ -31,9 +39,9 @@ LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.defaul
 export LOCAL_DEVICE_RECOVERY_FSTAB
 
 # compile the media codecs for the device.
-LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs.xml:system/etc/media_codecs.xml
-LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_profiles.xml:system/etc/media_profiles.xml
-LOCAL_DEVICE_MEDIA               += device/broadcom/avko/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
+LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
+LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
+LOCAL_DEVICE_MEDIA               += device/broadcom/avko/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
 export LOCAL_DEVICE_MEDIA
 
 # optional device override/addition.
@@ -54,7 +62,7 @@ export BOLT_BOARD_VB             := BCM97252SSFFG_NOAVS
 
 # kernel command line.
 LOCAL_DEVICE_KERNEL_CMDLINE      := mem=984m@0m mem=32m@992m mem=1024m@2048m
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=328m@656m bmem=263m@2809m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=328m@656m bmem=270m@2802m
 LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=731m@2048m
 LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x3D800000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
 export LOCAL_DEVICE_KERNEL_CMDLINE

@@ -23,4 +23,4 @@ ro.nx.eth.irq_mode_mask=3:2
 ro.com.google.clientidbase=android-avko-tv
 
 ro.nrdp.modelgroup=AVKO
-ro.nrdp.validation=ninja_4
+ro.nrdp.validation=ninja_5.1
