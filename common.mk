@@ -40,7 +40,7 @@ export LOCAL_DEVICE_RECOVERY_FSTAB
 
 # compile the media codecs for the device.
 LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
-LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
+LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 LOCAL_DEVICE_MEDIA               += device/broadcom/avko/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
 export LOCAL_DEVICE_MEDIA
 
@@ -62,7 +62,7 @@ export BOLT_BOARD_VB             := BCM97252SSFFG_NOAVS
 
 # kernel command line.
 LOCAL_DEVICE_KERNEL_CMDLINE      := mem=984m@0m mem=32m@992m mem=1024m@2048m
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=328m@656m bmem=270m@2802m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=731m@2048m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=324m@660m bmem=310m@2762m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=714m@2048m
 LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x3D800000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
 export LOCAL_DEVICE_KERNEL_CMDLINE
