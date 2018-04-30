@@ -13,6 +13,8 @@ LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:root/u
 
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.avko_nvi.rc
 
+export LOCAL_DEVICE_AON_GPIO     := device/broadcom/avko/rcs/aon_gpio.cfg:$(TARGET_COPY_OUT_VENDOR)/power/aon_gpio.cfg
+
 # common to all avko devices.
 include device/broadcom/avko/common.mk
 

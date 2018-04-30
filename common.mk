@@ -6,8 +6,8 @@ export PLATFORM                  := 97439
 
 # binary distribution
 export BCM_BINDIST_BL_ROOT       := vendor/broadcom/prebuilts/bootloaders/avko
-export BCM_BINDIST_LIBS_ROOT     := vendor/broadcom/prebuilts/nximg/4.1/avko
-export BCM_BINDIST_KNL_ROOT      := device/broadcom/avko-kernel/4.1
+export BCM_BINDIST_LIBS_ROOT     := vendor/broadcom/prebuilts/nximg/4.9/avko
+export BCM_BINDIST_KNL_ROOT      := device/broadcom/avko-kernel/4.9
 export BCM_DIST_FORCED_BINDIST   := y
 export BCM_DIST_BLIM_BINS        := y
 
@@ -51,7 +51,6 @@ ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
 LOCAL_DEVICE_SEPOLICY_BLOCK      += device/broadcom/avko/sepolicy/treble
 endif
 export LOCAL_DEVICE_SEPOLICY_BLOCK
-export LOCAL_DEVICE_AON_GPIO     := device/broadcom/avko/aon_gpio.cfg:$(TARGET_COPY_OUT_VENDOR)/power/aon_gpio.cfg
 export LOCAL_DEVICE_KEY_POLL     := device/broadcom/common/keylayout/gpio_keys_polled.kl:system/usr/keylayout/gpio_keys_polled.kl
 export LOCAL_DEVICE_REFERENCE_BUILD := device/broadcom/avko/reference_build.mk
 export LOCAL_DEVICE_BT_CONFIG    := device/broadcom/avko/bluetooth/vnd_avko.txt
@@ -62,7 +61,7 @@ export BOLT_BOARD_VB             := BCM97252SSFFG_NOAVS
 
 # kernel command line.
 LOCAL_DEVICE_KERNEL_CMDLINE      := mem=984m@0m mem=32m@992m mem=1024m@2048m
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=324m@660m bmem=310m@2762m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=714m@2048m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=328m@656m bmem=314m@2758m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=710m@2048m
 LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x3D800000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
 export LOCAL_DEVICE_KERNEL_CMDLINE
