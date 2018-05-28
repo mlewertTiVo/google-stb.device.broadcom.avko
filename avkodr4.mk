@@ -1,3 +1,5 @@
+# Support ddr4 sdram
+
 export LOCAL_PRODUCT_OUT         := avkodr4
 export LOCAL_DEVICE_FULL_TREBLE  := y
 
