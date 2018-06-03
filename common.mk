@@ -19,13 +19,11 @@ else
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.nx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nx.rc
 endif
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.fs.default.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.fs.rc  # NOT verity
-LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.eth.eth0.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.eth.rc   # uses 'eth0'
 LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.block.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.block.rc      # block devices
 LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.bcm.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.bcm.usb.rc  # uses 'configfs'
 else
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.nx.rc:root/init.nx.rc
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.nvi.fs.default.rc:root/init.fs.rc  # NOT verity
-LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.eth.eth0.rc:root/init.eth.rc       # uses 'eth0'
 LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.block.rc:root/init.block.rc          # block devices
 LOCAL_DEVICE_RCS                 += device/broadcom/avko/rcs/init.bcm.usb.rc:root/init.bcm.usb.rc      # uses 'configfs'
 endif
