@@ -9,7 +9,6 @@ export BCM_BINDIST_BL_ROOT       := vendor/broadcom/prebuilts/bootloaders/avko
 export BCM_BINDIST_LIBS_ROOT     := vendor/broadcom/prebuilts/nximg/4.9/avko
 export BCM_BINDIST_KNL_ROOT      := device/broadcom/avko-kernel/4.9
 export BCM_DIST_FORCED_BINDIST   := y
-export BCM_DIST_BLIM_BINS        := y
 
 # compile the rc's for the device.
 ifneq ($(LOCAL_NVI_LAYOUT),y)
