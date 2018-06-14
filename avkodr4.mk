@@ -7,7 +7,7 @@ LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.default.e
 LOCAL_DEVICE_FSTAB               += device/broadcom/common/fstab/fstab.default.early:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
 export LOCAL_DEVICE_FSTAB
 
-export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/default.conf
+export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/default-sys-bloat.conf
 
 LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.avkodr4.rc
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
