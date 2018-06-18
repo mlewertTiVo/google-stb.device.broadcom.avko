@@ -51,7 +51,7 @@ export LOCAL_DEVICE_SEPOLICY_BLOCK
 export LOCAL_DEVICE_KEY_POLL     := device/broadcom/common/keylayout/gpio_keys_polled.kl:system/usr/keylayout/gpio_keys_polled.kl
 export LOCAL_DEVICE_REFERENCE_BUILD := device/broadcom/avko/reference_build.mk
 export LOCAL_DEVICE_BT_CONFIG    := device/broadcom/avko/bluetooth/vnd_avko.txt
-export LOCAL_DEVICE_USERDATA     := 6137298432 # ~5.7G
+export LOCAL_DEVICE_USERDATA     := 5386518016 # ~5.0G
 export V3D_VARIANT               := vc5
 export BXPT_POWER_MANAGEMENT     := n
 export BOLT_BOARD_VB             := BCM97252SSFFG_NOAVS
