@@ -55,6 +55,7 @@ export LOCAL_DEVICE_USERDATA     := 5386518016 # ~5.0G
 export V3D_VARIANT               := vc5
 export BXPT_POWER_MANAGEMENT     := n
 export BOLT_BOARD_VB             := BCM97252SSFFG_NOAVS
+export LOCAL_DEVICE_PAK_BINARY   := pak.7252s.zd.bin
 
 # kernel command line.
 LOCAL_DEVICE_KERNEL_CMDLINE      := mem=984m@0m mem=32m@992m mem=1024m@2048m
