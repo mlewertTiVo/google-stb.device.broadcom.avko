@@ -19,7 +19,11 @@ include device/broadcom/avko/common.mk
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
-$(call inherit-product, build/make/target/product/product_launched_with_l.mk)
+# *** warning.
+# $(call inherit-product, build/make/target/product/product_launched_with_l.mk)
+# advertize launch with O to simplify certification testing (vts)
+$(call inherit-product, build/make/target/product/product_launched_with_o.mk)
+# *** warning.
 PRODUCT_NAME                     := avko
 PRODUCT_MODEL                    := avko
 PRODUCT_BRAND                    := google
