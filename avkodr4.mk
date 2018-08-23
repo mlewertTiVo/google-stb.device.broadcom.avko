@@ -16,6 +16,8 @@ LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:
 
 export LOCAL_DEVICE_AON_GPIO     := device/broadcom/avko/rcs/aon_gpio.dr4.cfg:$(TARGET_COPY_OUT_VENDOR)/power/aon_gpio.cfg
 
+export BOLT_BOARD_VB             := BCM97252SSFFDR4
+
 # common to all avko devices.
 include device/broadcom/avko/common.mk
 
