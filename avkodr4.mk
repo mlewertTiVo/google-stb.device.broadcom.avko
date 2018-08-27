@@ -53,6 +53,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
    \
    ro.com.google.clientidbase=android-avko-tv \
    ro.nrdp.modelgroup=AVKO \
-   ro.nrdp.validation=ninja_5.1
+   ro.nrdp.validation=ninja_5.1 \
+   ro.nx.hwc2.tweak.force_eotf=0
 
 TARGET_BOOTLOADER_BOARD_NAME := avkodr4
