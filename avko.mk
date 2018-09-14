@@ -1,4 +1,6 @@
+ifndef LOCAL_PRODUCT_OUT
 export LOCAL_PRODUCT_OUT       := avko
+endif
 export LOCAL_DEVICE_FULL_TREBLE  := y
 
 LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.default.early:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.avko
