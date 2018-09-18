@@ -34,7 +34,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.hardware=avkodr4 \
    \
    ro.opengles.version=196608 \
-   debug.hwui.render_dirty_regions=false \
    ro.nx.mma=1 \
    \
    ro.nx.heap.video_secure=86m \
