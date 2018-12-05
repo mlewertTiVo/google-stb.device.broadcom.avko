@@ -56,3 +56,5 @@ LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=328m@656m bmem=314m@2758m
 LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=710m@2048m
 LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x3D800000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
 export LOCAL_DEVICE_KERNEL_CMDLINE
+
+export LOCAL_DEVICE_MEDIA_SW_AVC_1080P := y

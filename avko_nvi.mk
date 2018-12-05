@@ -4,6 +4,10 @@ ifndef LOCAL_PRODUCT_OUT
 export LOCAL_PRODUCT_OUT         := avko_nvi
 endif
 
+export LOCAL_FULL_TREBLE_NOT_COMPATIBLE := y
+PRODUCT_TREBLE_LINKER_NAMESPACES := false
+PRODUCT_USE_VNDK_OVERRIDE        := false
+
 LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.nvi.default:root/fstab.avko_nvi
 LOCAL_DEVICE_FSTAB               += device/broadcom/common/fstab/fstab.nvi.default:root/fstab.bcm
 export LOCAL_DEVICE_FSTAB
@@ -33,3 +37,5 @@ PRODUCT_DEVICE                   := avko_nvi
 # additional setup per device.
 PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=avko_nvi
 TARGET_BOOTLOADER_BOARD_NAME := avko_nvi
+PRODUCT_PACKAGES += sepolicy
+
