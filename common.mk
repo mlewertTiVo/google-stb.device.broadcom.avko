@@ -32,7 +32,7 @@ LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.defaul
 export LOCAL_DEVICE_RECOVERY_FSTAB
 
 # compile the media codecs for the device.
-LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
+LOCAL_DEVICE_MEDIA               := device/broadcom/avko/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
 LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 LOCAL_DEVICE_MEDIA               += device/broadcom/avko/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
 export LOCAL_DEVICE_MEDIA
