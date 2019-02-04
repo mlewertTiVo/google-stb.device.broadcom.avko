@@ -1,8 +1,9 @@
-# non-vendor-image layout: there is no separate partition for vendor.img in O+. 	1
+# non-vendor-image layout: there is no separate partition for vendor.img in O+.
 export LOCAL_NVI_LAYOUT          := y
 ifndef LOCAL_PRODUCT_OUT
 export LOCAL_PRODUCT_OUT         := avko_nvi
 endif
+export TARGET_SAGE_PLATFORM      := avko
 
 export LOCAL_FULL_TREBLE_NOT_COMPATIBLE := y
 PRODUCT_TREBLE_LINKER_NAMESPACES := false
